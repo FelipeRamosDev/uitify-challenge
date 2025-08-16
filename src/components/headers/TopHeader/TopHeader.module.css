@@ -1,5 +1,7 @@
 .TopHeader {
-   background-color: #111;
+   position: sticky;
+   top: 0;
+   background-color: var(--color-primary-900);
 }
 
 .logo {

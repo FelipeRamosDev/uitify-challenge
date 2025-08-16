@@ -1,4 +1,4 @@
-import type { ComponentBaseProps, SizeKeywords } from '@/types/base.types';
+import type { ComponentBaseProps } from '@/types/base.types';
 
 export function parseCSS(classes?: ComponentBaseProps['className'], merge?: ComponentBaseProps['className']): string {
    let result: string[] = [];
@@ -20,22 +20,4 @@ export function parseCSS(classes?: ComponentBaseProps['className'], merge?: Comp
    }
 
    return result.filter(item => item).join(' ');
-}
-
-export function parsePadding(size: SizeKeywords): string {
-   switch (size) {
-      case 'xs':
-         return 'p-1';
-      case 's':
-         return 'p-2';
-      case 'm':
-         return 'p-3';
-      case 'l':
-         return 'p-4';
-      case 'xl':
-         return 'p-5';
-      default:
-         return '';
-   }
-
 }
