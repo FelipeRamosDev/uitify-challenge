@@ -1,6 +1,6 @@
 import type { ComponentBaseProps, SizeKeywords } from '@/types/base.types';
 
-export function parseCSS(classes?: ComponentBaseProps['children'], merge?: ComponentBaseProps['children']): string {
+export function parseCSS(classes?: ComponentBaseProps['className'], merge?: ComponentBaseProps['className']): string {
    let result: string[] = [];
 
    if (typeof classes === 'string') {

@@ -5,7 +5,7 @@ import { Container } from '@/components/layout';
 export default function TopHeader(): React.JSX.Element {
    return (
       <header className={styles.TopHeader}>
-         <Container className={[ 'flex', 'justify-between' ]}>
+         <Container className="flex justify-between">
             <img
                className={styles.logo}
                src={UitifyLogo}
