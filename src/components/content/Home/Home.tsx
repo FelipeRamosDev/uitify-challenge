@@ -1,7 +1,12 @@
+import { PageHeader } from '@/components/headers';
+
 export default function Home(): React.JSX.Element {
    return (
       <div className="Home">
-         <h1 className="text-center">Mini Seller Console</h1>
+         <PageHeader
+            title="Leads Conversion"
+            description="Optimize your sales funnel and boost conversions with our powerful tools."
+         />
       </div>
    );
 }
