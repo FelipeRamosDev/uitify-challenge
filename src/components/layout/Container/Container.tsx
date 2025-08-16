@@ -1,14 +1,11 @@
-import { parseCSS, parsePadding } from '@/helpers/parse';
+import { parseCSS } from '@/helpers/parse';
 import styles from './Container.module.css';
 
 // Types
-import type { ContainerProps } from './Container.types';
+import type { ComponentBaseProps } from '@/types/base.types';
 
-export default function Container({ padding = 'm', className, children }: ContainerProps) {
-   const classes = parseCSS(className, [
-      styles.Container,
-      parsePadding(padding)
-   ]);
+export default function Container({ className, children }: ComponentBaseProps) {
+   const classes = parseCSS(className, styles.Container);
 
    return (
       <div className={classes}>
