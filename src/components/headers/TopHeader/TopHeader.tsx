@@ -1,6 +1,6 @@
 import UitifyLogo from '@/assets/uitify_logo_light.svg';
-import styles from './TopHeader.module.css';
 import { Container } from '@/components/layout';
+import styles from './TopHeader.module.css';
 
 export default function TopHeader(): React.JSX.Element {
    return (

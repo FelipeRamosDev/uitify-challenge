@@ -1,6 +1,6 @@
 import React from 'react';
 import { PageBase } from '@/components/layout';
-import { Home } from './components/content';
+import { Home } from '@/components/content';
 
 function App(): React.JSX.Element {
   return (
