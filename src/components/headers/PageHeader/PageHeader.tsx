@@ -3,7 +3,8 @@ import styles from './PageHeader.module.css'
 import { Container } from '@/components/layout';
 import type { PageHeaderProps } from './PageHeader.types';
 
-export default function PageHeader({ title, description }: PageHeaderProps): React.JSX.Element {
+export default function PageHeader({ title, description, className }: PageHeaderProps): React.JSX.Element {
+   const classes = parseCSS(className, 'PageHeader');
    const headerContainerCSS = parseCSS(styles.headerContainer, [
       'flex',
       'items-center',
@@ -13,7 +14,7 @@ export default function PageHeader({ title, description }: PageHeaderProps): Rea
    ]);
 
    return (
-      <div className="PageHeader">
+      <div className={classes}>
          <Container className={headerContainerCSS}>
             <div className="flex-1">
                <h1>{title}</h1>
