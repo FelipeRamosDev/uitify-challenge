@@ -1,6 +1,6 @@
 import { parseCSS } from '@/helpers/parse';
 import { SelectInput, TextInput } from '@/components/inputs';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 // types
 import type { LeadsFilterProps } from './LeadsFilter.types';
@@ -37,6 +37,11 @@ export default function LeadsFilter({ className, defaultData = [], setData }: Le
       const filtered = filter(defaultData, searchInput, currentValue);
       setData(filtered);
    };
+
+   useEffect(() => {
+      const filtered = filter(defaultData, searchInput, statusFilter);
+      setData(filtered);
+   }, [defaultData, searchInput, statusFilter]);
 
    return (
       <div
