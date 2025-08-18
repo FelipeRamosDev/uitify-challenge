@@ -13,17 +13,14 @@ export default function DataView({ label, value, edit, fieldName = '', handleEdi
    const [errors, setErrors] = useState<string[]>([]);
 
    const editAction = () => {
-      const errorsList = validations.map((validation) => {
-         if (!validation.validator(inputValue as LeadData[keyof LeadData])) {
-            return validation.errorMessage;
-         }
-
-         return null;
-      }).filter(item => item !== null);
-
+      const errorsList = validations.flatMap((validation) =>
+         validation.validator(inputValue as LeadData[keyof LeadData])
+            ? []
+            : [validation.errorMessage]
+      );
       setErrors(errorsList);
       if (errorsList.length) {
-         return;
+         return false;
       }
 
       handleEdit(Number(edit?.id), fieldName, String(inputValue));

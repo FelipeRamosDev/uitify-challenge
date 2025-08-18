@@ -25,19 +25,6 @@ export default function LeadsTable(): React.JSX.Element {
       setSelectedLead(item);
    };
 
-   // const handleEdit = (id: number, fieldName: string, value: string) => {
-   //    setData(prev => prev.map((item: LeadData) => {
-   //       if (item.id === id) {
-   //          return {
-   //             ...item,
-   //             [fieldName]: value
-   //          };
-   //       }
-
-   //       return item;
-   //    }))
-   // }
-
    const slideOverPortal = createPortal((
       <SlideOver
          isOpen={Boolean(selectedLead)}
