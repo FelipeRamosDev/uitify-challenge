@@ -1,5 +1,5 @@
 import { parseCSS } from '@/helpers/parse';
-import { TextInput } from '@/components/inputs';
+import { SelectInput, TextInput } from '@/components/inputs';
 import { useState } from 'react';
 
 // types
@@ -26,13 +26,24 @@ export default function LeadsFilter({ className, defaultData = [], setData }: Le
    }
 
    return (
-      <div className={parseCSS(className, "flex bg-primary-800 rounded-sm p-4 text-primary-100")}>
+      <fieldset className={parseCSS(className, "flex gap-4  bg-primary-800 rounded-sm p-4 text-primary-100")}>
          <TextInput
             label="Search Leads"
             placeholder="Search..."
             value={searchInput}
             onChange={handleSearch}
          />
-      </div>
+
+         <SelectInput
+            title="Filter by Status"
+            label="Filter by Status"
+            minWidth="200px"
+            options={[
+               { value: 'all', label: 'All' },
+               { value: 'new', label: 'New' },
+               { value: 'closed', label: 'Closed' },
+            ]}
+         />
+      </fieldset>
    );
 }
