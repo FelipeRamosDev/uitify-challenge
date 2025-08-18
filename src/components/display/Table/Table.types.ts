@@ -5,6 +5,7 @@ export interface TableProps<T> extends ComponentBaseProps {
    columns: TableColumn<T>[];
    loading?: boolean;
    error?: Error | null;
+   onRowClick?: (item: T) => void;
 }
 
 export interface TableColumn<T> {
