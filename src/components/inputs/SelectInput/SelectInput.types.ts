@@ -1,6 +1,6 @@
 import type { ComponentBaseProps } from "@/types/base.types";
 
-export interface SelectInputProps extends ComponentBaseProps {
+export interface SelectInputProps extends Omit<ComponentBaseProps, 'onClick'> {
    title: string;
    label?: string;
    minWidth?: string;
