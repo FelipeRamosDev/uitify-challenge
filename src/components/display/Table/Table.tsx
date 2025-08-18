@@ -31,10 +31,6 @@ export default function Table<Item>({
    };
 
    if (loading || error) {
-      if (error) {
-         console.error(error)
-      }
-
       return (
          <div className="bg-primary-100 mt-5 rounded-sm py-20">
             {loading && <p className={parseCSS(styles.fallback, ['text-center'])}>Loading...</p>}
