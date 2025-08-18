@@ -2,6 +2,7 @@ import { SlideOver, Table } from '@/components/display';
 import DataView from '@/components/display/DataView/DataView';
 import { LeadsFilter } from '@/components/filters';
 import { useFetch } from '@/hooks';
+import initialLeads from '@/assets/data/leads.json';
 
 // types
 import type { LeadData } from '@/types/data.types';
@@ -13,9 +14,10 @@ export default function LeadsTable(): React.JSX.Element {
       defaultData,
       data = [],
       setData,
-      error,
+      editData,
       loading
-   } = useFetch<LeadData[]>('../../assets/data/leads.json', 'score', 'desc');
+   } = useFetch<LeadData>(initialLeads, 'score', 'desc');
+
    const [selectedLead, setSelectedLead] = useState<LeadData | null>(null);
    const computedLead = data.find((item: LeadData) => item.id === selectedLead?.id);
 
@@ -23,20 +25,18 @@ export default function LeadsTable(): React.JSX.Element {
       setSelectedLead(item);
    };
 
-   const handleEdit = (id: number, fieldName: string, value: string) => {
-      setData(prev => {
-         return prev.map((item: LeadData) => {
-            if (item.id === id) {
-               return {
-                  ...item,
-                  [fieldName]: value
-               };
-            }
+   // const handleEdit = (id: number, fieldName: string, value: string) => {
+   //    setData(prev => prev.map((item: LeadData) => {
+   //       if (item.id === id) {
+   //          return {
+   //             ...item,
+   //             [fieldName]: value
+   //          };
+   //       }
 
-            return item;
-         })
-      })
-   }
+   //       return item;
+   //    }))
+   // }
 
    const slideOverPortal = createPortal((
       <SlideOver
@@ -59,7 +59,7 @@ export default function LeadsTable(): React.JSX.Element {
                value={computedLead?.email}
                edit={computedLead}
                fieldName="email"
-               handleEdit={handleEdit}
+               handleEdit={editData}
                validations={[
                   {
                      validator: (value: LeadData[keyof LeadData]) => {
@@ -75,7 +75,7 @@ export default function LeadsTable(): React.JSX.Element {
                value={computedLead?.status}
                edit={computedLead}
                fieldName="status"
-               handleEdit={handleEdit}
+               handleEdit={editData}
             />
          </div>
       </SlideOver>
@@ -88,7 +88,6 @@ export default function LeadsTable(): React.JSX.Element {
          <Table<LeadData>
             items={data}
             loading={loading}
-            error={error}
             onRowClick={handleRowClick}
             columns={[
                { key: 'id', label: 'ID' },
