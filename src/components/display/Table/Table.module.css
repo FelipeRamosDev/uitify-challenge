@@ -24,3 +24,9 @@
    padding: calc(var(--spacing) * 2);
    text-align: left;
 }
+
+.fallback {
+   font-size: 1.1rem;
+   font-weight: 600;
+   color: var(--color-primary-900);
+}

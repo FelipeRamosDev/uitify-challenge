@@ -5,7 +5,13 @@ import styles from './Table.module.css';
 import type { JSX } from 'react';
 import type { TableProps } from './Table.types';
 
-export default function Table<Item>({ items = [], columns = [], className }: TableProps<Item>): JSX.Element {
+export default function Table<Item>({
+   items = [],
+   columns = [],
+   loading,
+   error,
+   className
+}: TableProps<Item>): JSX.Element {
    const classes = parseCSS(className, [
       styles.Table,
       'table-auto',
@@ -24,12 +30,25 @@ export default function Table<Item>({ items = [], columns = [], className }: Tab
       return String(index) + JSON.stringify(item);
    };
 
+   if (loading || error) {
+      if (error) {
+         console.error(error)
+      }
+
+      return (
+         <div className="bg-primary-100 mt-5 rounded-sm py-20">
+            {loading && <p className={parseCSS(styles.fallback, ['text-center'])}>Loading...</p>}
+            {error && <p className={parseCSS(styles.fallback, ['text-center'])}>Failed to load data</p>}
+         </div>
+      );
+   }
+
    return (
       <table className={classes}>
          <thead>
             <tr>
                {columns.map((column) => (
-                  <th key={String(column.id)}>
+                  <th key={String(column.key)}>
                      {column.label}
                   </th>
                ))}
@@ -39,10 +58,10 @@ export default function Table<Item>({ items = [], columns = [], className }: Tab
             {items.map((item: Item, index) => (
                <tr key={getRowKey(item as object, index)}>
                   {columns.map((column) => (
-                     <td key={String(column.id)}>
+                     <td key={String(column.key)}>
                         {(typeof column.format === 'function')
-                           ? column.format(item[column.id], item) 
-                           : String(item[column.id] ?? '')
+                           ? column.format(item[column.key], item)
+                           : String(item[column.key] ?? '')
                         }
                      </td>
                   ))}
