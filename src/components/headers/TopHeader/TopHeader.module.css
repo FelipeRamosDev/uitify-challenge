@@ -1,0 +1,9 @@
+.TopHeader {
+   position: sticky;
+   top: 0;
+   background-color: var(--color-primary-900);
+}
+
+.logo {
+   height: 40px;
+}

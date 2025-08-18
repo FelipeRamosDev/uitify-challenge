@@ -1,0 +1,31 @@
+.TextInput {
+   position: relative;
+   background-color: var(--color-primary-700);
+   border-radius: var(--radius-md) var(--radius-md) 0 0;
+}
+
+.TextInput label {
+   position: absolute;
+   font-size: 0.70rem;
+   top: var(--spacing);
+   left: calc(var(--spacing) * 2);
+   color: var(--color-primary-200);
+}
+
+.TextInput input {
+   outline: none;
+   border: none;
+   border-bottom: 2px solid var(--color-primary-400);
+   padding: calc(var(--spacing) * 2);
+   width: 100%;
+   color: var(--color-primary-100);
+}
+
+.TextInput input.hasLabel {
+   --padding: var(--spacing);
+   padding: calc(var(--padding) + 1.2rem) var(--padding) var(--padding) calc(var(--padding) * 2);
+}
+
+.TextInput input:focus {
+   border-bottom: 2px solid var(--color-accent-200);
+}

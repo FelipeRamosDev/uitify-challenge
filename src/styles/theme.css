@@ -1,0 +1,72 @@
+@theme {
+   --font-family: "Geist", "Geist Placeholder", sans-serif;
+   --font-family-headers: "Figtree", "Figtree Placeholder", sans-serif;
+
+   --value-primary-hue: 212;
+   --value-secondary-hue: 191;
+   --value-accent-hue: 157;
+
+   --value-primary-saturation: 17%;
+   --value-secondary-saturation: 50%;
+   --value-accent-saturation: 97%;
+
+   --color-primary-50: hsl(var(--value-primary-hue), var(--value-primary-saturation), 95%);
+   --color-primary-100: hsl(var(--value-primary-hue), var(--value-primary-saturation), 90%);
+   --color-primary-150: hsl(var(--value-primary-hue), var(--value-primary-saturation), 85%);
+   --color-primary-200: hsl(var(--value-primary-hue), var(--value-primary-saturation), 80%);
+   --color-primary-250: hsl(var(--value-primary-hue), var(--value-primary-saturation), 75%);
+   --color-primary-300: hsl(var(--value-primary-hue), var(--value-primary-saturation), 70%);
+   --color-primary-350: hsl(var(--value-primary-hue), var(--value-primary-saturation), 65%);
+   --color-primary-400: hsl(var(--value-primary-hue), var(--value-primary-saturation), 60%);
+   --color-primary-450: hsl(var(--value-primary-hue), var(--value-primary-saturation), 55%);
+   --color-primary-500: hsl(var(--value-primary-hue), var(--value-primary-saturation), 50%);
+   --color-primary-550: hsl(var(--value-primary-hue), var(--value-primary-saturation), 45%);
+   --color-primary-600: hsl(var(--value-primary-hue), var(--value-primary-saturation), 40%);
+   --color-primary-650: hsl(var(--value-primary-hue), var(--value-primary-saturation), 35%);
+   --color-primary-700: hsl(var(--value-primary-hue), var(--value-primary-saturation), 30%);
+   --color-primary-750: hsl(var(--value-primary-hue), var(--value-primary-saturation), 25%);
+   --color-primary-800: hsl(var(--value-primary-hue), var(--value-primary-saturation), 20%);
+   --color-primary-850: hsl(var(--value-primary-hue), var(--value-primary-saturation), 15%);
+   --color-primary-900: hsl(var(--value-primary-hue), var(--value-primary-saturation), 10%);
+   --color-primary-950: hsl(var(--value-primary-hue), var(--value-primary-saturation), 5%);
+
+   --color-secondary-50: hsl(var(--value-secondary-hue), var(--value-secondary-saturation), 95%);
+   --color-secondary-100: hsl(var(--value-secondary-hue), var(--value-secondary-saturation), 90%);
+   --color-secondary-150: hsl(var(--value-secondary-hue), var(--value-secondary-saturation), 85%);
+   --color-secondary-200: hsl(var(--value-secondary-hue), var(--value-secondary-saturation), 80%);
+   --color-secondary-250: hsl(var(--value-secondary-hue), var(--value-secondary-saturation), 75%);
+   --color-secondary-300: hsl(var(--value-secondary-hue), var(--value-secondary-saturation), 70%);
+   --color-secondary-350: hsl(var(--value-secondary-hue), var(--value-secondary-saturation), 65%);
+   --color-secondary-400: hsl(var(--value-secondary-hue), var(--value-secondary-saturation), 60%);
+   --color-secondary-450: hsl(var(--value-secondary-hue), var(--value-secondary-saturation), 55%);
+   --color-secondary-500: hsl(var(--value-secondary-hue), var(--value-secondary-saturation), 50%);
+   --color-secondary-550: hsl(var(--value-secondary-hue), var(--value-secondary-saturation), 45%);
+   --color-secondary-600: hsl(var(--value-secondary-hue), var(--value-secondary-saturation), 40%);
+   --color-secondary-650: hsl(var(--value-secondary-hue), var(--value-secondary-saturation), 35%);
+   --color-secondary-700: hsl(var(--value-secondary-hue), var(--value-secondary-saturation), 30%);
+   --color-secondary-750: hsl(var(--value-secondary-hue), var(--value-secondary-saturation), 25%);
+   --color-secondary-800: hsl(var(--value-secondary-hue), var(--value-secondary-saturation), 20%);
+   --color-secondary-850: hsl(var(--value-secondary-hue), var(--value-secondary-saturation), 15%);
+   --color-secondary-900: hsl(var(--value-secondary-hue), var(--value-secondary-saturation), 10%);
+   --color-secondary-950: hsl(var(--value-secondary-hue), var(--value-secondary-saturation), 5%);
+
+   --color-accent-50: hsl(var(--value-accent-hue), var(--value-accent-saturation), 95%);
+   --color-accent-100: hsl(var(--value-accent-hue), var(--value-accent-saturation), 90%);
+   --color-accent-150: hsl(var(--value-accent-hue), var(--value-accent-saturation), 85%);
+   --color-accent-200: hsl(var(--value-accent-hue), var(--value-accent-saturation), 80%);
+   --color-accent-250: hsl(var(--value-accent-hue), var(--value-accent-saturation), 75%);
+   --color-accent-300: hsl(var(--value-accent-hue), var(--value-accent-saturation), 70%);
+   --color-accent-350: hsl(var(--value-accent-hue), var(--value-accent-saturation), 65%);
+   --color-accent-400: hsl(var(--value-accent-hue), var(--value-accent-saturation), 60%);
+   --color-accent-450: hsl(var(--value-accent-hue), var(--value-accent-saturation), 55%);
+   --color-accent-500: hsl(var(--value-accent-hue), var(--value-accent-saturation), 50%);
+   --color-accent-550: hsl(var(--value-accent-hue), var(--value-accent-saturation), 45%);
+   --color-accent-600: hsl(var(--value-accent-hue), var(--value-accent-saturation), 40%);
+   --color-accent-650: hsl(var(--value-accent-hue), var(--value-accent-saturation), 35%);
+   --color-accent-700: hsl(var(--value-accent-hue), var(--value-accent-saturation), 30%);
+   --color-accent-750: hsl(var(--value-accent-hue), var(--value-accent-saturation), 25%);
+   --color-accent-800: hsl(var(--value-accent-hue), var(--value-accent-saturation), 20%);
+   --color-accent-850: hsl(var(--value-accent-hue), var(--value-accent-saturation), 15%);
+   --color-accent-900: hsl(var(--value-accent-hue), var(--value-accent-saturation), 10%);
+   --color-accent-950: hsl(var(--value-accent-hue), var(--value-accent-saturation), 5%);
+}
