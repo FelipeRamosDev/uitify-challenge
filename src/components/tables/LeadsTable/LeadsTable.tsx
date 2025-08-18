@@ -4,6 +4,7 @@ import { useFetch } from '@/hooks';
 
 // types
 import type { LeadData } from '@/types/data.types';
+import { useState } from 'react';
 
 export default function LeadsTable(): React.JSX.Element {
    const {
@@ -13,7 +14,13 @@ export default function LeadsTable(): React.JSX.Element {
       error,
       loading
    } = useFetch<LeadData[]>('../../assets/data/leads.json', 'score', 'desc');
+   const [selectedLead, setSelectedLead] = useState<LeadData | null>(null);
 
+   const handleRowClick = (item: LeadData) => {
+      setSelectedLead(item);
+   };
+
+   console.log(selectedLead);
    return (
       <div>
          <LeadsFilter defaultData={defaultData} setData={setData} />
@@ -22,6 +29,7 @@ export default function LeadsTable(): React.JSX.Element {
             items={data}
             loading={loading}
             error={error}
+            onRowClick={handleRowClick}
             columns={[
                { key: 'id', label: 'ID' },
                { key: 'name', label: 'Name' },
