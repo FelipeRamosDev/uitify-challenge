@@ -1,10 +1,13 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+
+// types
 import type { FetchResponse } from './useFetch.types';
 
 export default function useFetch<T>(url: string): FetchResponse<T> {
    const [data, setData] = useState<T>([] as T);
    const [error, setError] = useState<Error | null>(null);
    const [loading, setLoading] = useState<boolean>(true);
+   const defaultData = useRef<T>([] as T);
    const TIMEOUT = 2000; // Simulate a delay for the fetch operation
 
    useEffect(() => {
@@ -14,7 +17,8 @@ export default function useFetch<T>(url: string): FetchResponse<T> {
                setData([] as T);
                return;
             }
-   
+
+            defaultData.current = response.default;
             setData(response.default);
          }).catch(error => {
             setError(error);
@@ -22,5 +26,5 @@ export default function useFetch<T>(url: string): FetchResponse<T> {
       }, TIMEOUT);
    }, [ url ]);
 
-   return { data, error, loading };
+   return { defaultData: defaultData.current, data, setData, error, loading };
 }
