@@ -37,7 +37,7 @@ export default function useFetch<T>(url: string, sortBy?: string, sortOrder: 'as
             setError(error);
          }).finally(() => setLoading(false));
       }, TIMEOUT);
-   }, [url]);
+   }, [url, sortBy, sortOrder]);
 
    return { defaultData: defaultData.current, data, setData, error, loading };
 }
