@@ -10,6 +10,7 @@ export default function Table<Item>({
    columns = [],
    loading,
    error,
+   onRowClick,
    className
 }: TableProps<Item>): JSX.Element {
    const classes = parseCSS(className, [
@@ -41,18 +42,24 @@ export default function Table<Item>({
 
    return (
       <table className={classes}>
-         {items.length > 0 && <thead>
-            <tr>
-               {columns.map((column) => (
-                  <th key={String(column.key)}>
-                     {column.label}
-                  </th>
-               ))}
-            </tr>
-         </thead>}
+         {items.length > 0 && (
+            <thead>
+               <tr>
+                  {columns.map((column) => (
+                     <th key={String(column.key)}>
+                        {column.label}
+                     </th>
+                  ))}
+               </tr>
+            </thead>
+         )}
          <tbody>
             {items.map((item: Item, index) => (
-               <tr key={getRowKey(item as object, index)}>
+               <tr
+                  key={getRowKey(item as object, index)}
+                  onClick={() => onRowClick?.(item)}
+                  className={onRowClick ? styles.clickable : undefined}
+               >
                   {columns.map((column) => (
                      <td key={String(column.key)}>
                         {(typeof column.format === 'function')

@@ -1,5 +1,6 @@
 export interface ComponentBaseProps {
    className?: string | string[];
+   onClick?: React.MouseEventHandler<HTMLButtonElement>;
    children?: React.ReactNode;
 }
 

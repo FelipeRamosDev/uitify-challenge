@@ -11,6 +11,17 @@
    background-color: var(--color-primary-100);
 }
 
+.Table tbody tr.clickable {
+   cursor: pointer;
+   -webkit-user-select: none;
+   user-select: none;
+   transition: all 200ms;
+}
+
+.Table tbody tr.clickable:hover {
+   background-color: var(--color-primary-300);
+}
+
 .Table thead tr th {
    font-size: 0.8rem;
 }
@@ -21,7 +32,7 @@
 
 .Table thead tr th,
 .Table tbody tr td {
-   padding: calc(var(--spacing) * 2);
+   padding: calc(var(--spacing) * 3);
    text-align: left;
 }
 
