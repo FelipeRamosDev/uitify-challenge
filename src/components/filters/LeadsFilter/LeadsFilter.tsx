@@ -41,7 +41,7 @@ export default function LeadsFilter({ className, defaultData = [], setData }: Le
    useEffect(() => {
       const filtered = filter(defaultData, searchInput, statusFilter);
       setData(filtered);
-   }, [defaultData, searchInput, statusFilter]);
+   }, [defaultData, searchInput, statusFilter, setData]);
 
    return (
       <div
