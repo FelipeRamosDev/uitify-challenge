@@ -1,6 +1,8 @@
 import type { LeadData } from "@/types/data.types";
 
 export function searchFilter(leads: LeadData[], searchTerm: string) {
+   if (!searchTerm) return leads;
+
    return leads.filter(lead =>
       (lead.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
       lead.company.toLowerCase().includes(searchTerm.toLowerCase()))

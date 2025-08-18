@@ -16,7 +16,7 @@ export default function TextInput({ id, label, type = 'text', className, minWidt
    }
 
    if (minWidth) {
-      wrapProps.style = { ...props.style, minWidth };
+      wrapProps.style = { minWidth, ...props.style };
    }
 
    return (

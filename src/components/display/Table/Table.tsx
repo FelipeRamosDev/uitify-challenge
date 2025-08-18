@@ -41,7 +41,7 @@ export default function Table<Item>({
 
    return (
       <table className={classes}>
-         {items.length > 1 && <thead>
+         {items.length > 0 && <thead>
             <tr>
                {columns.map((column) => (
                   <th key={String(column.key)}>
