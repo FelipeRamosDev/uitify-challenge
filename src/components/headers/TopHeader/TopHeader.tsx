@@ -1,4 +1,4 @@
-import UitifyLogo from '@/assets/uitify_logo_light.svg';
+import UitifyLogo from '@/assets/images/uitify_logo_light.svg';
 import { Container } from '@/components/layout';
 import styles from './TopHeader.module.css';
 
