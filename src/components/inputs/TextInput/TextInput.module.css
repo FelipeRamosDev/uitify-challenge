@@ -6,7 +6,7 @@
 
 .TextInput label {
    position: absolute;
-   font-size: 0.75rem;
+   font-size: 0.70rem;
    top: var(--spacing);
    left: calc(var(--spacing) * 2);
    color: var(--color-primary-200);

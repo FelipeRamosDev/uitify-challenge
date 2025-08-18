@@ -41,7 +41,7 @@ export default function Table<Item>({
 
    return (
       <table className={classes}>
-         <thead>
+         {items.length > 1 && <thead>
             <tr>
                {columns.map((column) => (
                   <th key={String(column.key)}>
@@ -49,7 +49,7 @@ export default function Table<Item>({
                   </th>
                ))}
             </tr>
-         </thead>
+         </thead>}
          <tbody>
             {items.map((item: Item, index) => (
                <tr key={getRowKey(item as object, index)}>
@@ -63,6 +63,14 @@ export default function Table<Item>({
                   ))}
                </tr>
             ))}
+            
+            {items.length === 0 && (
+               <tr>
+                  <td colSpan={columns.length}>
+                     <p className="text-center">No data available</p>
+                  </td>
+               </tr>
+            )}
          </tbody>
       </table>
    );

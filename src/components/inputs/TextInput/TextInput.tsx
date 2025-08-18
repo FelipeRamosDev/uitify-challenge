@@ -4,8 +4,9 @@ import styles from './TextInput.module.css';
 // types
 import type { TextInputProps } from './TextInput.types';
 
-export default function TextInput({ id, label, type = 'text', className, ...props }: TextInputProps): React.JSX.Element {
+export default function TextInput({ id, label, type = 'text', className, minWidth, ...props }: TextInputProps): React.JSX.Element {
    const inputClasses = [];
+   const wrapProps = { style: {} };
    const classes = parseCSS(className, [
       styles.TextInput
    ]);
@@ -14,8 +15,12 @@ export default function TextInput({ id, label, type = 'text', className, ...prop
       inputClasses.push(styles.hasLabel);
    }
 
+   if (minWidth) {
+      wrapProps.style = { ...props.style, minWidth };
+   }
+
    return (
-      <fieldset className={classes}>
+      <fieldset className={classes} {...wrapProps}>
          {label && <label htmlFor={id}>{label}</label>}
 
          <input
