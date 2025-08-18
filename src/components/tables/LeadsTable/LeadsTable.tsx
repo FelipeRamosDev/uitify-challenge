@@ -6,7 +6,13 @@ import { useFetch } from '@/hooks';
 import type { LeadData } from '@/types/data.types';
 
 export default function LeadsTable(): React.JSX.Element {
-   const { defaultData, data = [], setData, error, loading } = useFetch<LeadData[]>('../../assets/data/leads.json');
+   const {
+      defaultData,
+      data = [],
+      setData,
+      error,
+      loading
+   } = useFetch<LeadData[]>('../../assets/data/leads.json', 'score', 'desc');
 
    return (
       <div>

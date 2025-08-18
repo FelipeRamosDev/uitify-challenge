@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 // types
 import type { FetchResponse } from './useFetch.types';
 
-export default function useFetch<T>(url: string): FetchResponse<T> {
+export default function useFetch<T>(url: string, sortBy?: string, sortOrder: 'asc' | 'desc' = 'asc'): FetchResponse<T> {
    const [data, setData] = useState<T>([] as T);
    const [error, setError] = useState<Error | null>(null);
    const [loading, setLoading] = useState<boolean>(true);
@@ -18,13 +18,26 @@ export default function useFetch<T>(url: string): FetchResponse<T> {
                return;
             }
 
-            defaultData.current = response.default;
-            setData(response.default);
+            if (sortBy) {
+               defaultData.current = response.default.sort((a: T, b: T) => {
+                  const aValue = a[sortBy as keyof T];
+                  const bValue = b[sortBy as keyof T];
+
+                  if (aValue < bValue) return sortOrder === 'asc' ? -1 : 1;
+                  if (aValue > bValue) return sortOrder === 'asc' ? 1 : -1;
+
+                  return 0;
+               });
+            } else {
+               defaultData.current = response.default;
+            }
+
+            setData(defaultData.current);
          }).catch(error => {
             setError(error);
          }).finally(() => setLoading(false));
       }, TIMEOUT);
-   }, [ url ]);
+   }, [url]);
 
    return { defaultData: defaultData.current, data, setData, error, loading };
 }
