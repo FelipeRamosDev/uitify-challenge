@@ -57,7 +57,7 @@ export default function Table<Item>({
             {items.map((item: Item, index) => (
                <tr
                   key={getRowKey(item as object, index)}
-                  onClick={() => typeof onRowClick === 'function' && onRowClick(item)}
+                  onClick={() => onRowClick?.(item)}
                   className={onRowClick ? styles.clickable : undefined}
                >
                   {columns.map((column) => (
