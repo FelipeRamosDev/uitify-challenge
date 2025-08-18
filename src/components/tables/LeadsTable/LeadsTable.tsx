@@ -16,11 +16,70 @@ export default function LeadsTable(): React.JSX.Element {
       error,
       loading
    } = useFetch<LeadData[]>('../../assets/data/leads.json', 'score', 'desc');
-   const [ selectedLead, setSelectedLead ] = useState<LeadData | null>(null);
+   const [selectedLead, setSelectedLead] = useState<LeadData | null>(null);
+   const computedLead = data.find((item: LeadData) => item.id === selectedLead?.id);
 
    const handleRowClick = (item: LeadData) => {
       setSelectedLead(item);
    };
+
+   const handleEdit = (id: number, fieldName: string, value: string) => {
+      setData(prev => {
+         return prev.map((item: LeadData) => {
+            if (item.id === id) {
+               return {
+                  ...item,
+                  [fieldName]: value
+               };
+            }
+
+            return item;
+         })
+      })
+   }
+
+   const slideOverPortal = createPortal((
+      <SlideOver
+         isOpen={Boolean(selectedLead)}
+         onClose={() => setSelectedLead(null)}
+      >
+         <div className="slide-header mb-2">
+            <h2 className="text-lg">Lead Details</h2>
+            <p className="text-sm">Here you can view and edit lead information.</p>
+         </div>
+
+         <div className="slideBody">
+            <DataView label="ID" value={computedLead?.id} />
+            <DataView label="Name" value={computedLead?.name} />
+            <DataView label="Company" value={computedLead?.company} />
+            <DataView label="Source" value={computedLead?.source} />
+            <DataView label="Score" value={computedLead?.score} />
+            <DataView
+               label="Email"
+               value={computedLead?.email}
+               edit={computedLead}
+               fieldName="email"
+               handleEdit={handleEdit}
+               validations={[
+                  {
+                     validator: (value: LeadData[keyof LeadData]) => {
+                        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                        return typeof value === 'string' && emailRegex.test(value);
+                     },
+                     errorMessage: 'Invalid email format'
+                  }
+               ]}
+            />
+            <DataView
+               label="Status"
+               value={computedLead?.status}
+               edit={computedLead}
+               fieldName="status"
+               handleEdit={handleEdit}
+            />
+         </div>
+      </SlideOver>
+   ), document.querySelector('main#root') as HTMLElement);
 
    return (
       <div>
@@ -42,27 +101,7 @@ export default function LeadsTable(): React.JSX.Element {
             ]}
          />
 
-         {createPortal((
-            <SlideOver
-               isOpen={Boolean(selectedLead)}
-               onClose={() => setSelectedLead(null)}
-            >
-               <div className="slide-header mb-2">
-                  <h2 className="text-lg">Lead Details</h2>
-                  <p className="text-sm">Here you can view and edit lead information.</p>
-               </div>
-
-               <div className="slideBody">
-                  <DataView label="ID" value={selectedLead?.id} />
-                  <DataView label="Name" value={selectedLead?.name} />
-                  <DataView label="Company" value={selectedLead?.company} />
-                  <DataView label="Email" value={selectedLead?.email} />
-                  <DataView label="Status" value={selectedLead?.status} />
-                  <DataView label="Source" value={selectedLead?.source} />
-                  <DataView label="Score" value={selectedLead?.score} />
-               </div>
-            </SlideOver>
-         ), document.querySelector('main#root') as HTMLElement)}
+         {slideOverPortal}
       </div>
    );
 }

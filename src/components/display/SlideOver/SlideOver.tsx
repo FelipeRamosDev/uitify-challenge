@@ -4,6 +4,7 @@ import CloseIcon from '@/assets/icons/CloseIcon';
 
 // types
 import type { SlideOverProps } from './SlideOver.types';
+import { IconButton } from '@/components/buttons';
 
 export default function SlideOver({
    isOpen,
@@ -25,13 +26,7 @@ export default function SlideOver({
       >
          <div className={parseCSS(styles.SlideOverContent, 'bg-primary-50 shadow-2xl')}>
             <div className="flex items-center justify-end">
-               <button
-                  className={parseCSS(styles.SlideOverCloseButton, 'text-primary-900 hover:text-primary-700 hover:bg-primary-100 p-2 cursor-pointer')}
-                  onClick={onClose}
-                  aria-label="Close Slide Over"
-               >
-                  <CloseIcon />
-               </button>
+               <IconButton title="Close" icon={<CloseIcon />} onClick={onClose} />
             </div>
 
             <div className="px-5">
