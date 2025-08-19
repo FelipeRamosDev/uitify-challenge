@@ -40,7 +40,6 @@ export default function DataView({
       return true;
    }
 
-   console.log(inputValue)
    return (
       <div className="flex gap-1 bg-primary-100 rounded-sm p-2 mb-2">
          {!editMode && (
