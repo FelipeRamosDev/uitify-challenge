@@ -6,6 +6,7 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
+    "test": "echo \"Tests will be added here\" && exit 0",
     "preview": "vite preview"
   },
   "dependencies": {
