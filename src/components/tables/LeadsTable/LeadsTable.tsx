@@ -66,7 +66,7 @@ export default function LeadsTable(): React.JSX.Element {
                handleEdit={editData}
             />
 
-            <Button title="Convert Lead">Convert Lead</Button>
+            <Button title="Convert this lead to a customer">Convert Lead</Button>
          </div>
       </SlideOver>
    ), document.querySelector('main#root') as HTMLElement);
