@@ -1,6 +1,7 @@
 import { parseCSS } from '@/helpers/parse';
 import { SelectInput, TextInput } from '@/components/inputs';
 import { useEffect, useState } from 'react';
+import { leadStatus } from '@/app.config.json';
 
 // types
 import type { LeadsFilterProps } from './LeadsFilter.types';
@@ -9,6 +10,11 @@ import { filter, filterStatus, searchFilter } from './LeadsFilter.helpers';
 export default function LeadsFilter({ className, defaultData = [], setData }: LeadsFilterProps): React.JSX.Element {
    const [searchInput, setSearchInput] = useState<string>('');
    const [statusFilter, setStatusFilter] = useState<string>('all');
+   const selectOptions = Object.entries(leadStatus).map(([key, value]) => ({
+      value: key,
+      label: value
+   }));
+
 
    const handleSearch = (ev: React.ChangeEvent<HTMLInputElement>) => {
       const currentValue = ev.target.value;
@@ -69,11 +75,7 @@ export default function LeadsFilter({ className, defaultData = [], setData }: Le
             minWidth="200px"
             value={statusFilter}
             onChange={handleStatusChange}
-            options={[
-               { value: 'all', label: 'All' },
-               { value: 'new', label: 'New' },
-               { value: 'closed', label: 'Closed' },
-            ]}
+            options={selectOptions}
          />
       </div>
    );

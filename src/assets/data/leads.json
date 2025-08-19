@@ -42,7 +42,7 @@
       "email": "d.wilson@cloudfirst.tech",
       "source": "Email Campaign",
       "score": 67,
-      "status": "nurturing"
+      "status": "contacted"
    },
    {
       "id": 6,
@@ -87,7 +87,7 @@
       "email": "amanda.white@healthcaresol.com",
       "source": "Google Ads",
       "score": 76,
-      "status": "nurturing"
+      "status": "contacted"
    },
    {
       "id": 11,
@@ -132,7 +132,7 @@
       "email": "daniel.lewis@sportsanalytics.com",
       "source": "Referral",
       "score": 82,
-      "status": "nurturing"
+      "status": "contacted"
    },
    {
       "id": 16,
@@ -177,7 +177,7 @@
       "email": "kimberly.king@foodinnov.com",
       "source": "Trade Show",
       "score": 88,
-      "status": "nurturing"
+      "status": "contacted"
    },
    {
       "id": 21,
@@ -222,7 +222,7 @@
       "email": "ryan.carter@blockchainvent.com",
       "source": "Email Campaign",
       "score": 72,
-      "status": "nurturing"
+      "status": "contacted"
    },
    {
       "id": 26,
@@ -267,7 +267,7 @@
       "email": "samantha.campbell@digitaltrans.com",
       "source": "Google Ads",
       "score": 68,
-      "status": "nurturing"
+      "status": "contacted"
    },
    {
       "id": 31,
@@ -312,7 +312,7 @@
       "email": "charles.stewart@cloudcomputing.com",
       "source": "LinkedIn",
       "score": 81,
-      "status": "nurturing"
+      "status": "contacted"
    },
    {
       "id": 36,
@@ -357,7 +357,7 @@
       "email": "tiffany.cook@contentmgmt.pro",
       "source": "Website",
       "score": 77,
-      "status": "nurturing"
+      "status": "contacted"
    },
    {
       "id": 41,
@@ -402,7 +402,7 @@
       "email": "wayne.cox@supplychainopt.com",
       "source": "Referral",
       "score": 82,
-      "status": "nurturing"
+      "status": "contacted"
    },
    {
       "id": 46,
@@ -447,7 +447,7 @@
       "email": "gloria.gray@qasystems.com",
       "source": "Trade Show",
       "score": 79,
-      "status": "nurturing"
+      "status": "contacted"
    },
    {
       "id": 51,
@@ -492,7 +492,7 @@
       "email": "lawrence.kelly@enterprisesol.com",
       "source": "Email Campaign",
       "score": 87,
-      "status": "nurturing"
+      "status": "contacted"
    },
    {
       "id": 56,
@@ -537,7 +537,7 @@
       "email": "denise.barnes@apidev.com",
       "source": "Google Ads",
       "score": 71,
-      "status": "nurturing"
+      "status": "contacted"
    },
    {
       "id": 61,
@@ -582,7 +582,7 @@
       "email": "willie.perry@workflowmgmt.com",
       "source": "LinkedIn",
       "score": 86,
-      "status": "nurturing"
+      "status": "contacted"
    },
    {
       "id": 66,
@@ -627,7 +627,7 @@
       "email": "janice.flores@businessanalytics.com",
       "source": "Website",
       "score": 84,
-      "status": "nurturing"
+      "status": "contacted"
    },
    {
       "id": 71,
@@ -672,7 +672,7 @@
       "email": "gerald.gonzales@contentdist.com",
       "source": "Referral",
       "score": 66,
-      "status": "nurturing"
+      "status": "contacted"
    },
    {
       "id": 76,
@@ -717,7 +717,7 @@
       "email": "betty.diaz@timemgmtpro.com",
       "source": "Trade Show",
       "score": 87,
-      "status": "nurturing"
+      "status": "contacted"
    },
    {
       "id": 81,
@@ -762,7 +762,7 @@
       "email": "alan.graham@conferencesol.com",
       "source": "Email Campaign",
       "score": 76,
-      "status": "nurturing"
+      "status": "contacted"
    },
    {
       "id": 86,
@@ -807,7 +807,7 @@
       "email": "donna.fisher@brandmgmt.com",
       "source": "Google Ads",
       "score": 92,
-      "status": "nurturing"
+      "status": "contacted"
    },
    {
       "id": 91,
@@ -852,7 +852,7 @@
       "email": "steve.montgomery@crmsol.com",
       "source": "LinkedIn",
       "score": 95,
-      "status": "nurturing"
+      "status": "contacted"
    },
    {
       "id": 96,
@@ -897,6 +897,6 @@
       "email": "martha.harvey@businessdev.com",
       "source": "Website",
       "score": 75,
-      "status": "nurturing"
+      "status": "contacted"
    }
 ]
