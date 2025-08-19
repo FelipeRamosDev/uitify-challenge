@@ -1,3 +1,5 @@
+import ClosedEyeIcon from '@/assets/icons/ClosedEyeIcon';
+import EyeIcon from '@/assets/icons/EyeIcon';
 import { Button } from '@/components/buttons';
 import { PageHeader } from '@/components/headers';
 import { Container } from '@/components/layout';
@@ -13,7 +15,7 @@ export default function Home(): React.JSX.Element {
          <div className="Home">
             <PageHeader title="Leads Conversion">
                <Button title="Show Opportunities" onClick={() => setShowOpportunities(!showOpportunities)}>
-                  Opportunities
+                  {showOpportunities ? <ClosedEyeIcon /> : <EyeIcon />} Opportunities
                </Button>
             </PageHeader>
 
