@@ -6,22 +6,26 @@ import { OpportunitiesProvider } from '@/contexts';
 import { useState } from 'react';
 
 export default function Home(): React.JSX.Element {
-   const [ showOpportunities, setShowOpportunities ] = useState<boolean>(false);
+   const [showOpportunities, setShowOpportunities] = useState<boolean>(false);
 
    return (
       <OpportunitiesProvider>
          <div className="Home">
-            <PageHeader
-               title="Leads Conversion"
-               description="Optimize your sales funnel and boost conversions with our powerful tools."
-            >
+            <PageHeader title="Leads Conversion">
                <Button title="Show Opportunities" onClick={() => setShowOpportunities(!showOpportunities)}>
                   Opportunities
                </Button>
             </PageHeader>
 
             <Container>
-               {showOpportunities && <OpportunitiesTable />}
+               {showOpportunities && (<>
+                  <div className="bg-primary-900 rounded-sm px-3 py-3">
+                     <h2 className="text-primary-150 text-2xl">Opportunities</h2>
+                     <p className="text-primary-200 text-sm">Check below the leads converted to opportunities.</p>
+                  </div>
+                  <OpportunitiesTable />
+               </>)}
+
                <LeadsTable />
             </Container>
          </div>
