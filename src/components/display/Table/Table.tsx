@@ -73,6 +73,7 @@ export default function Table<Item>({
                </tbody>
             </table>
          )}
+
          {items.length === 0 && (
             <div className="bg-primary-200 p-3 my-2 rounded-sm">
                <p className="text-center">No data available</p>
