@@ -7,3 +7,12 @@ export interface LeadData {
    score: number;
    status: string;
 }
+
+export interface OpportunityData {
+   id: number;
+   name: string;
+   stage: string;
+   amount?: number;
+   accountName: string;
+};
+
