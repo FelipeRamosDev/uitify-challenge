@@ -1,2 +1,10 @@
-export { default as TextInput } from './TextInput/TextInput';
-export { default as SelectInput } from './SelectInput/SelectInput';
+import Text from './TextInput/TextInput';
+import Select from './SelectInput/SelectInput';
+
+export const TextInput = Text;
+export const SelectInput = Select;
+
+export default {
+   TextInput,
+   SelectInput
+};

@@ -50,11 +50,11 @@ export default function LeadsTable(): React.JSX.Element {
                handleEdit={editData}
                validations={[
                   {
+                     errorMessage: 'Invalid email format',
                      validator: (value: LeadData[keyof LeadData]) => {
                         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
                         return typeof value === 'string' && emailRegex.test(value);
-                     },
-                     errorMessage: 'Invalid email format'
+                     }
                   }
                ]}
             />
@@ -64,6 +64,12 @@ export default function LeadsTable(): React.JSX.Element {
                edit={computedLead}
                fieldName="status"
                handleEdit={editData}
+               editInput="SelectInput"
+               selectOptions={[
+                  { value: 'all', label: 'All' },
+                  { value: 'new', label: 'New' },
+                  { value: 'closed', label: 'Closed' },
+               ]}
             />
 
             <Button title="Convert this lead to a customer">Convert Lead</Button>
