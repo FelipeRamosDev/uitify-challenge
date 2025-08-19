@@ -1,14 +1,6 @@
-import type { LeadData } from "@/types/data.types";
-
-export interface Opportunity {
-   id: number;
-   name: string;
-   stage: string;
-   amount?: number;
-   accountName: string;
-};
+import type { LeadData, OpportunityData } from '@/types/data.types';
 
 export interface OpportunitiesContextType {
-   opportunities: Opportunity[];
+   opportunities: OpportunityData[];
    addOpportunity: (lead: LeadData) => void;
 };

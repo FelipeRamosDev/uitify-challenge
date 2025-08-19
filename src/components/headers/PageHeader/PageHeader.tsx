@@ -3,7 +3,7 @@ import styles from './PageHeader.module.css'
 import { Container } from '@/components/layout';
 import type { PageHeaderProps } from './PageHeader.types';
 
-export default function PageHeader({ title, description, className }: PageHeaderProps): React.JSX.Element {
+export default function PageHeader({ title, description, className, children }: PageHeaderProps): React.JSX.Element {
    const classes = parseCSS(className, 'PageHeader');
    const headerContainerCSS = parseCSS(styles.headerContainer, [
       'flex',
@@ -20,6 +20,10 @@ export default function PageHeader({ title, description, className }: PageHeader
                <h1>{title}</h1>
                {description && <p>{description}</p>}
             </div>
+
+            {children && <div className="flex-0">
+               {children}
+            </div>}
          </Container>
       </div>
    );
