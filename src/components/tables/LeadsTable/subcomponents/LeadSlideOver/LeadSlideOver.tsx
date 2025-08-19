@@ -1,13 +1,19 @@
 import { Button } from '@/components/buttons';
 import { DataView, SlideOver } from '@/components/display';
+import { leadStatus } from '@/app.config.json';
+import { useOpportunities } from '@/contexts';
 
 // types
 import type { LeadSlideOverProps } from './LeadSlideOver.types';
 import type { LeadData } from '@/types/data.types';
-import { useOpportunities } from '@/contexts';
 
 export default function LeadSlideOver({ selectedLead, setSelectedLead, editData }: LeadSlideOverProps) {
    const { addOpportunity } = useOpportunities();
+   const isOpportunity = selectedLead?.status === 'opportunity';
+   const selectOptions = Object.entries(leadStatus).map(([key, value]) => ({
+      value: key,
+      label: value
+   }));
 
    if (!selectedLead) {
       return null;
@@ -55,23 +61,20 @@ export default function LeadSlideOver({ selectedLead, setSelectedLead, editData 
 
             <DataView
                label="Status"
-               value={selectedLead?.status}
+               value={leadStatus[selectedLead?.status as keyof typeof leadStatus]}
                edit={selectedLead}
                fieldName="status"
                handleEdit={editData}
                editInput="SelectInput"
-               selectOptions={[
-                  { value: 'all', label: 'All' },
-                  { value: 'new', label: 'New' },
-                  { value: 'closed', label: 'Closed' },
-               ]}
+               selectOptions={selectOptions}
             />
 
             <Button
                title="Convert this lead to a customer"
                onClick={convertLead}
+               disabled={isOpportunity}
             >
-               Convert Lead
+               {!isOpportunity ? 'Convert Lead' : 'Lead Converted'}
             </Button>
          </div>
       </SlideOver>

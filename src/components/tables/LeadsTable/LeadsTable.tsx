@@ -5,6 +5,7 @@ import initialLeads from '@/assets/data/leads.json';
 import { LeadSlideOver } from '@/components/tables/LeadsTable/subcomponents';
 import { useState } from 'react';
 import { createPortal } from 'react-dom';
+import { leadStatus } from '@/app.config.json';
 
 // types
 import type { LeadData } from '@/types/data.types';
@@ -46,9 +47,13 @@ export default function LeadsTable(): React.JSX.Element {
                { key: 'name', label: 'Name' },
                { key: 'company', label: 'Company' },
                { key: 'email', label: 'Email' },
-               { key: 'status', label: 'Status' },
                { key: 'source', label: 'Source' },
                { key: 'score', label: 'Score' },
+               {
+                  key: 'status',
+                  label: 'Status',
+                  format: (value: string | number) => leadStatus[String(value) as keyof typeof leadStatus]
+               }
             ]}
          />
 
