@@ -1,11 +1,9 @@
-import { createContext, useContext, useState } from 'react';
-import type { OpportunitiesContextType, Opportunity } from './Opportunities.types';
-import type { LeadData } from '@/types/data.types';
+import { useState } from 'react';
+import { OpportunitiesContext } from './OpportunitiesContext';
+import type { LeadData, OpportunityData } from '@/types/data.types';
 
-const OpportunitiesContext = createContext<OpportunitiesContextType | undefined>(undefined);
-
-export const OpportunitiesProvider = ({ children }: { children: React.ReactNode }) => {
-   const [opportunities, setOpportunities] = useState<Opportunity[]>([]);
+export default function OpportunitiesProvider({ children }: { children: React.ReactNode }) {
+   const [opportunities, setOpportunities] = useState<OpportunityData[]>([]);
 
    const addOpportunity = (lead: LeadData) => {
       if (!lead) return;
@@ -32,14 +30,4 @@ export const OpportunitiesProvider = ({ children }: { children: React.ReactNode 
          {children}
       </OpportunitiesContext.Provider>
    );
-};
-
-export const useOpportunities = () => {
-   const context = useContext(OpportunitiesContext);
-
-   if (!context) {
-      throw new Error('useOpportunities must be used within an OpportunitiesProvider');
-   }
-
-   return context;
 };
