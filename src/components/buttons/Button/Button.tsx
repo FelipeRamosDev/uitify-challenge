@@ -8,6 +8,10 @@ export default function Button({ title, type = 'button', className, color = 'pri
    const classes = parseCSS(className, [
       styles.Button,
       styles[color],
+      'flex',
+      'justify-center',
+      'items-center',
+      'gap-2',
       'rounded-sm',
       'px-4',
       'py-2',

@@ -54,6 +54,8 @@ export default function LeadsFilter({ className, defaultData = [], setData }: Le
          className={parseCSS(className, [
             'flex',
             'justify-end',
+            'flex-col',
+            'md:flex-row',
             'gap-4',
             'bg-primary-800',
             'rounded-sm',

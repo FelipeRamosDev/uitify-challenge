@@ -1,5 +1,6 @@
 {
    "leadStatus": {
+      "all": "All",
       "new": "New",
       "contacted": "Contacted",
       "qualified": "Qualified",
