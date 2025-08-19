@@ -1,0 +1,36 @@
+.SelectInput {
+   position: relative;
+   background-color: var(--color-primary-700);
+   border-radius: var(--radius-md) var(--radius-md) 0 0;
+}
+
+.SelectInput label {
+   position: absolute;
+   font-size: 0.7rem;
+   top: var(--spacing);
+   left: calc(var(--spacing) * 2);
+   color: var(--color-primary-200);
+}
+
+.SelectInput select {
+   outline: none;
+   width: 100%;
+   min-height: 100%;
+   border-bottom: 2px solid var(--color-primary-400);
+   padding: calc(var(--spacing) * 2);
+}
+
+.SelectInput select.hasLabel {
+   --padding: var(--spacing);
+
+   padding: calc(var(--padding) + 1.2rem) var(--padding) var(--padding) calc(var(--padding) * 2);
+}
+
+.SelectInput select option {
+   color: var(--color-primary-100);
+   background-color: var(--color-primary-700);
+}
+
+.SelectInput select:focus {
+   border-bottom: 2px solid var(--color-accent-200);
+}

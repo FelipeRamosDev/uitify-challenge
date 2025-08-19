@@ -1,0 +1,55 @@
+.Button {
+   font-size: 0.9rem;
+}
+
+.Button:disabled,
+.Button:disabled:hover {
+   background-color: var(--color-gray-300);
+   color: var(--color-gray-800);
+   cursor: not-allowed;
+}
+
+.primary {
+   background-color: var(--color-primary-800);
+   color: var(--color-primary-100);
+}
+
+.primary:hover {
+   background-color: var(--color-primary-600);
+}
+
+.secondary {
+   background-color: var(--color-secondary-800);
+   color: var(--color-secondary-100);
+}
+
+.secondary:hover {
+   background-color: var(--color-secondary-600);
+}
+
+.accent {
+   background-color: var(--color-accent-600);
+   color: var(--color-accent-100);
+}
+
+.accent:hover {
+   background-color: var(--color-accent-500);
+}
+
+.error {
+   background-color: var(--color-error-600);
+   color: var(--color-error-100);
+}
+
+.error:hover {
+   background-color: var(--color-error-500);
+}
+
+.success {
+   background-color: var(--color-success-600);
+   color: var(--color-success-100);
+}
+
+.success:hover {
+   background-color: var(--color-success-500);
+}

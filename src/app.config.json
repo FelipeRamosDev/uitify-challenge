@@ -1,0 +1,22 @@
+{
+   "leadStatus": {
+      "all": "All",
+      "new": "New",
+      "contacted": "Contacted",
+      "qualified": "Qualified",
+      "opportunity": "Opportunity",
+      "lost": "Lost"
+   },
+   "opportunityStages": {
+      "prospecting": "Prospecting",
+      "qualification": "Qualification",
+      "proposal": "Proposal",
+      "negotiation": "Negotiation",
+      "closed_won": "Closed Won",
+      "closed_lost": "Closed Lost"
+   },
+   "sortOptions": {
+      "asc": "Ascending",
+      "desc": "Descending"
+   }
+}
