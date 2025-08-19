@@ -26,7 +26,7 @@ export default function Table<Item>({
       if ('id' in item && item.id != null) return String(item.id);
       if ('key' in item && item.key != null) return String(item.key);
       if ('uuid' in item && item.uuid != null) return String(item.uuid);
-      
+
       // Fallback to a hash of the item's values
       return String(index) + JSON.stringify(item);
    };
@@ -41,44 +41,44 @@ export default function Table<Item>({
    }
 
    return (
-      <table className={classes}>
+      <div className="overflow-x-auto lg:overflow-x-visible">
          {items.length > 0 && (
-            <thead>
-               <tr>
-                  {columns.map((column) => (
-                     <th key={String(column.key)}>
-                        {column.label}
-                     </th>
+            <table className={classes}>
+               <thead>
+                  <tr>
+                     {columns.map((column) => (
+                        <th key={String(column.key)}>
+                           {column.label}
+                        </th>
+                     ))}
+                  </tr>
+               </thead>
+               <tbody>
+                  {items.map((item: Item, index) => (
+                     <tr
+                        key={getRowKey(item as object, index)}
+                        onClick={() => onRowClick?.(item)}
+                        className={onRowClick ? styles.clickable : undefined}
+                     >
+                        {columns.map((column) => (
+                           <td key={String(column.key)}>
+                              {(typeof column.format === 'function')
+                                 ? column.format(item[column.key], item)
+                                 : String(item[column.key] ?? '')
+                              }
+                           </td>
+                        ))}
+                     </tr>
                   ))}
-               </tr>
-            </thead>
+               </tbody>
+            </table>
          )}
-         <tbody>
-            {items.map((item: Item, index) => (
-               <tr
-                  key={getRowKey(item as object, index)}
-                  onClick={() => onRowClick?.(item)}
-                  className={onRowClick ? styles.clickable : undefined}
-               >
-                  {columns.map((column) => (
-                     <td key={String(column.key)}>
-                        {(typeof column.format === 'function')
-                           ? column.format(item[column.key], item)
-                           : String(item[column.key] ?? '')
-                        }
-                     </td>
-                  ))}
-               </tr>
-            ))}
-            
-            {items.length === 0 && (
-               <tr>
-                  <td colSpan={columns.length}>
-                     <p className="text-center">No data available</p>
-                  </td>
-               </tr>
-            )}
-         </tbody>
-      </table>
+
+         {items.length === 0 && (
+            <div className="bg-primary-200 p-3 my-2 rounded-sm">
+               <p className="text-center">No data available</p>
+            </div>
+         )}
+      </div>
    );
 }

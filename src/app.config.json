@@ -1,5 +1,6 @@
 {
    "leadStatus": {
+      "all": "All",
       "new": "New",
       "contacted": "Contacted",
       "qualified": "Qualified",
@@ -13,5 +14,9 @@
       "negotiation": "Negotiation",
       "closed_won": "Closed Won",
       "closed_lost": "Closed Lost"
+   },
+   "sortOptions": {
+      "asc": "Ascending",
+      "desc": "Descending"
    }
 }

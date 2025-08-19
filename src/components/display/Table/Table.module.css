@@ -1,5 +1,12 @@
 .Table {
    width: 100%;
+   min-width: 600px; /* Ensures table doesn't get too cramped on mobile */
+}
+
+@media (min-width: var(--breakpoint-sm)) {
+   .Table {
+      min-width: auto;
+   }
 }
 
 .Table thead tr {

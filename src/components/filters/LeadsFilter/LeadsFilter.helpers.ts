@@ -15,6 +15,15 @@ export function filterStatus(leads: LeadData[], status: string) {
    );
 }
 
-export function filter(leads: LeadData[], searchTerm: string, status: string) {
-   return searchFilter(filterStatus(leads, status), searchTerm);
+export function sortByScore(leads: LeadData[], order: 'asc' | 'desc') {
+   return [...leads].sort((a, b) => {
+      const scoreA = a.score || 0;
+      const scoreB = b.score || 0;
+
+      return order === 'asc' ? scoreA - scoreB : scoreB - scoreA;
+   });
+}
+
+export function filter(leads: LeadData[], searchTerm: string, status: string, order: 'asc' | 'desc') {
+   return sortByScore(searchFilter(filterStatus(leads, status), searchTerm), order);
 }

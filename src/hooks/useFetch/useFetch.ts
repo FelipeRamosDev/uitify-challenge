@@ -42,7 +42,7 @@ export default function useFetch<T>(initialData: T[], sortBy?: string, sortOrder
                   const bValue = b[sortBy as keyof T];
    
                   if (aValue < bValue) return sortOrder === 'asc' ? -1 : 1;
-                  if (aValue > bValue) return sortOrder === 'asc' ? 1 : -1;
+                  if (aValue > bValue) return sortOrder === 'desc' ? 1 : -1;
    
                   return 0;
                });
