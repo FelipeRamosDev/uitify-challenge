@@ -11,13 +11,15 @@ import { leadStatus } from '@/app.config.json';
 import type { LeadData } from '@/types/data.types';
 
 export default function LeadsTable(): React.JSX.Element {
+   const storagedOrder = localStorage.getItem('sortOrder') as 'asc' | 'desc';
+
    const {
       defaultData,
       data = [],
       setData,
       editData,
       loading
-   } = useFetch<LeadData>(initialLeads, 'score', 'desc');
+   } = useFetch<LeadData>(initialLeads, 'score', storagedOrder || 'desc');
 
    const [selectedLead, setSelectedLead] = useState<LeadData | null>(null);
    const computedLead = data.find((item: LeadData) => item.id === selectedLead?.id);
