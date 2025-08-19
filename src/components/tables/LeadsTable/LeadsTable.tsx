@@ -8,6 +8,7 @@ import initialLeads from '@/assets/data/leads.json';
 import type { LeadData } from '@/types/data.types';
 import { useState } from 'react';
 import { createPortal } from 'react-dom';
+import Button from '@/components/buttons/Button/Button';
 
 export default function LeadsTable(): React.JSX.Element {
    const {
@@ -64,6 +65,8 @@ export default function LeadsTable(): React.JSX.Element {
                fieldName="status"
                handleEdit={editData}
             />
+
+            <Button title="Convert Lead">Convert Lead</Button>
          </div>
       </SlideOver>
    ), document.querySelector('main#root') as HTMLElement);
