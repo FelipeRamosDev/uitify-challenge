@@ -9,6 +9,7 @@ import type { LeadData } from '@/types/data.types';
 
 export default function LeadSlideOver({ selectedLead, setSelectedLead, editData }: LeadSlideOverProps) {
    const { addOpportunity } = useOpportunities();
+   const isOpportunity = selectedLead?.status === 'opportunity';
    const selectOptions = Object.entries(leadStatus).map(([key, value]) => ({
       value: key,
       label: value
@@ -71,8 +72,9 @@ export default function LeadSlideOver({ selectedLead, setSelectedLead, editData 
             <Button
                title="Convert this lead to a customer"
                onClick={convertLead}
+               disabled={isOpportunity}
             >
-               Convert Lead
+               {!isOpportunity ? 'Convert Lead' : 'Lead Converted'}
             </Button>
          </div>
       </SlideOver>

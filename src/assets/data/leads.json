@@ -33,7 +33,7 @@
       "email": "emily.davis@startuphub.io",
       "source": "Google Ads",
       "score": 95,
-      "status": "opportunity"
+      "status": "qualified"
    },
    {
       "id": 5,
@@ -78,7 +78,7 @@
       "email": "chris.lee@fintechinnovations.com",
       "source": "Referral",
       "score": 90,
-      "status": "opportunity"
+      "status": "qualified"
    },
    {
       "id": 10,
@@ -123,7 +123,7 @@
       "email": "rachel.clark@greenenergy.com",
       "source": "Trade Show",
       "score": 77,
-      "status": "opportunity"
+      "status": "qualified"
    },
    {
       "id": 15,
@@ -168,7 +168,7 @@
       "email": "anthony.allen@securityplus.com",
       "source": "LinkedIn",
       "score": 79,
-      "status": "opportunity"
+      "status": "qualified"
    },
    {
       "id": 20,
@@ -213,7 +213,7 @@
       "email": "megan.nelson@creativestudios.com",
       "source": "LinkedIn",
       "score": 91,
-      "status": "opportunity"
+      "status": "qualified"
    },
    {
       "id": 25,
@@ -258,7 +258,7 @@
       "email": "tyler.phillips@renewableresources.com",
       "source": "LinkedIn",
       "score": 89,
-      "status": "opportunity"
+      "status": "qualified"
    },
    {
       "id": 30,
@@ -303,7 +303,7 @@
       "email": "heather.collins@customerexp.com",
       "source": "Website",
       "score": 78,
-      "status": "opportunity"
+      "status": "qualified"
    },
    {
       "id": 35,
@@ -348,7 +348,7 @@
       "email": "marcus.reed@vrdevstudio.com",
       "source": "Referral",
       "score": 86,
-      "status": "opportunity"
+      "status": "qualified"
    },
    {
       "id": 40,
@@ -393,7 +393,7 @@
       "email": "cynthia.richardson@sustainablesol.com",
       "source": "Trade Show",
       "score": 75,
-      "status": "opportunity"
+      "status": "qualified"
    },
    {
       "id": 45,
@@ -438,7 +438,7 @@
       "email": "eugene.peterson@dbmgmt.com",
       "source": "Email Campaign",
       "score": 67,
-      "status": "opportunity"
+      "status": "qualified"
    },
    {
       "id": 50,
@@ -483,7 +483,7 @@
       "email": "julie.brooks@custsupporttech.com",
       "source": "Google Ads",
       "score": 72,
-      "status": "opportunity"
+      "status": "qualified"
    },
    {
       "id": 55,
@@ -528,7 +528,7 @@
       "email": "carl.wood@perfmonitoring.com",
       "source": "LinkedIn",
       "score": 89,
-      "status": "opportunity"
+      "status": "qualified"
    },
    {
       "id": 60,
@@ -573,7 +573,7 @@
       "email": "diane.jenkins@integrationservices.com",
       "source": "Website",
       "score": 73,
-      "status": "opportunity"
+      "status": "qualified"
    },
    {
       "id": 65,
@@ -618,7 +618,7 @@
       "email": "albert.hughes@processopt.com",
       "source": "Referral",
       "score": 80,
-      "status": "opportunity"
+      "status": "qualified"
    },
    {
       "id": 70,
@@ -663,7 +663,7 @@
       "email": "pamela.foster@digitalpublishing.com",
       "source": "Trade Show",
       "score": 91,
-      "status": "opportunity"
+      "status": "qualified"
    },
    {
       "id": 75,
@@ -708,7 +708,7 @@
       "email": "frank.griffin@productivitysys.com",
       "source": "Email Campaign",
       "score": 73,
-      "status": "opportunity"
+      "status": "qualified"
    },
    {
       "id": 80,
@@ -753,7 +753,7 @@
       "email": "jean.hamilton@eventplanningtech.com",
       "source": "Google Ads",
       "score": 83,
-      "status": "opportunity"
+      "status": "qualified"
    },
    {
       "id": 85,
@@ -798,7 +798,7 @@
       "email": "jack.abbott@graphicdesignpro.com",
       "source": "LinkedIn",
       "score": 78,
-      "status": "opportunity"
+      "status": "qualified"
    },
    {
       "id": 90,
@@ -843,7 +843,7 @@
       "email": "doris.oliver@salesautomation.com",
       "source": "Website",
       "score": 72,
-      "status": "opportunity"
+      "status": "qualified"
    },
    {
       "id": 95,
@@ -888,7 +888,7 @@
       "email": "raymond.crawford@growthstrategies.com",
       "source": "Referral",
       "score": 88,
-      "status": "opportunity"
+      "status": "qualified"
    },
    {
       "id": 100,
@@ -900,3 +900,4 @@
       "status": "contacted"
    }
 ]
+

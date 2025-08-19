@@ -4,7 +4,7 @@ import styles from './Button.module.css';
 // types 
 import type { ButtonProps } from './Button.types';
 
-export default function Button({ title, type = 'button', className, color = 'primary', onClick, children }: ButtonProps) {
+export default function Button({ title, type = 'button', className, color = 'primary', onClick, children, disabled }: ButtonProps) {
    const classes = parseCSS(className, [
       styles.Button,
       styles[color],
@@ -23,6 +23,7 @@ export default function Button({ title, type = 'button', className, color = 'pri
          title={title}
          className={classes}
          onClick={onClick}
+         disabled={disabled}
       >
          {children}
       </button>
