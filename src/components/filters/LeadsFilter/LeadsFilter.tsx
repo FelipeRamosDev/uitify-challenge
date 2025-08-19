@@ -62,7 +62,7 @@ export default function LeadsFilter({ className, defaultData = [], setData }: Le
    useEffect(() => {
       const filtered = filter(defaultData, searchInput, statusFilter, sortOrder as 'asc' | 'desc');
       setData(filtered);
-   }, [defaultData, searchInput, statusFilter, setData]);
+   }, [defaultData, searchInput, statusFilter, sortOrder, setData]);
 
    return (
       <div
